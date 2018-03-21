@@ -46,6 +46,7 @@ function buttonClick(button_value){
 	if (0 <= button_value &&  button_value <= 9){
 		onClickNumber(button_value);
 	}
+	// Clear all - resetting calculator to initial values
 	else if (button_value == "Clr-all"){
 		// clearing
 		valBuffer = 0;
@@ -54,14 +55,11 @@ function buttonClick(button_value){
 		outputBuffer = 0;
 		lastAction = ActionEnum.NUM_ENTER // Resetting to NUM_ENTER as if user just entered a '0'
 	}
+	// Reset only outputBuffer (what the user is inputting)
 	else if (button_value == "Clr"){
 		outputBuffer = 0;
 		lastAction = ActionEnum.NUM_ENTER // Resetting to NUM_ENTER as if user just entered a '0'
 	}
-	else if (button_value == "Clr"){
-		outputBuffer = 0;
-		lastAction = ActionEnum.NUM_ENTER // Resetting to NUM_ENTER as if user just entered a '0'
-	}	
 	else if (button_value == "+/-"){
 		// Negating calculator output/input of screen
 		outputBuffer = -outputBuffer;
@@ -72,7 +70,8 @@ function buttonClick(button_value){
 		outputBuffer = outputBuffer/10;
 		// Not recorded as a action with lastAction
 	}
-	else if (button_value==="+" || button_value==="-" || button_value==="*" || button_value==="/"){
+	// Opeartion
+	else if (button_value=="+" || button_value=="-" || button_value=="*" || button_value=="/"){
 		// Operation pressed
 		console.log("yo");
 		onClickOperator(button_value);
@@ -86,6 +85,7 @@ function buttonClick(button_value){
 	
 }
 
+// Function is triggered when user has pressed a button_value from {0:9}
 function onClickNumber(button_value){
 	if (lastAction == ActionEnum.NUM_ENTER){
 		outputBuffer = outputBuffer*10 + button_value; // Shift current outputBuffer to left by 10, add new number
@@ -113,6 +113,7 @@ function onClickNumber(button_value){
 	lastAction = ActionEnum.NUM_ENTER;
 }
 
+// Function triggered when user has pressed a button_value in the set {+,-,*,/}
 function onClickOperator(button_value){
 	if (lastAction == ActionEnum.NUM_ENTER){
 		// Evaluate whatever expression was last entered when pressing a new operator
@@ -128,6 +129,7 @@ function onClickOperator(button_value){
 	lastAction = ActionEnum.OPERATOR
 }
 
+// functino triggered when user has pressed "="
 function onClickEquals(){
 	if (lastAction == ActionEnum.NUM_ENTER){
 		// Evaluate whatever expression was last entered when pressing a new operator

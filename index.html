@@ -1,0 +1,45 @@
+<html>	
+	<head>
+	<link rel="stylesheet" href="css/calculator.css">
+	<title>Max Thrill Calculator</title>
+	</head>
+	<script src="js/calculator.js"></script>
+	<div id="calc-background">
+		<div id="button-grid">
+			<div id="row0">
+				<div id="calc-output">
+					<h1 id="calc-output-text">0</h1>
+				</div>
+			</div>
+			<div class="row" id="row1">
+				<button type='button' class="button" id='b7' onclick='buttonClick(7)'>7</button>
+				<button type='button' class="button" id='b8' onclick='buttonClick(8)'>8</button>
+				<button type='button' class="button" id='b9' onclick='buttonClick(9)'>9</button>
+				<button type='button' class="button operator" id='b+' onclick='buttonClick("+")'>+</button>
+			</div>
+			<div class="row" id="row2">
+				<button type='button' class="button" id='b4' onclick='buttonClick(4)'>4</button>
+				<button type='button' class="button" id='b5' onclick='buttonClick(5)'>5</button>
+				<button type='button' class="button" id='b6' onclick='buttonClick(6)'>6</button>
+				<button type='button' class="button operator" id='b-' onclick='buttonClick("-")'>-</button>
+			</div>
+			<div class="row" id="row3">
+				<button type='button' class="button" id='b1' onclick='buttonClick(1)'>1</button>
+				<button type='button' class="button" id='b2' onclick='buttonClick(2)'>2</button>
+				<button type='button' class="button" id='b3' onclick='buttonClick(3)'>3</button>
+				<button type='button' class="button operator" id='b*' onclick='buttonClick("*")'>*</button>
+			</div>
+			<div class="row" id="row3">
+				<button type='button' class="button" id='b1' onclick='buttonClick(0)'>0</button>
+				<button type='button' class="button operator" id='bclr-all' onclick='buttonClick("Clr-all")'>Clr-all</button>
+				<button type='button' class="button operator" id='bclr' onclick='buttonClick("Clr")'>Clr</button>
+				<button type='button' class="button operator" id='b/' onclick='buttonClick("/")'>/</button>	
+			</div>
+			<div class="row" id="row4">
+				<button type='button' class="button operator" id='bdp' onclick='buttonClick(".")'>.→</button>
+				<button type='button' class="button operator" id='bpnm' onclick='buttonClick("+/-")'>+/-</button>
+				<button type='button' class="button operator" id='beq' onclick='buttonClick("=")'>=</button>
+			</div>
+		</div>
+	</div>
+</html>
